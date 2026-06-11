@@ -9,15 +9,15 @@ module.exports = {
       colors: {
         brand: {
           DEFAULT: "#7c3cff",
-          light: "#9d6fff",
+          light: "#8f63ff",
           dark: "#6020e0",
         },
-        highlight: "#c084fc",
+        highlight: "#38bdf8",
         surface: {
-          DEFAULT: "#260f26",
-          2: "#251f47",
-          3: "#2e2858",
-          4: "#404e7c",
+          DEFAULT: "#0f0b18",
+          2: "#171225",
+          3: "#211a33",
+          4: "#2c3448",
         },
       },
       fontFamily: {

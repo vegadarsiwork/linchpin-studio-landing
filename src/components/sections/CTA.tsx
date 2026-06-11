@@ -12,75 +12,55 @@ export default function CTA() {
 
   useGSAP(
     () => {
-      gsap.from(".cta-inner > *", {
-        y: 40,
+      gsap.from(".cta-reveal", {
+        y: 30,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.9,
         ease: "power3.out",
         stagger: 0.1,
-        scrollTrigger: { trigger: ".cta-inner", start: "top 80%" },
-      });
-      gsap.to(".cta-blob", {
-        scale: 1.2,
-        duration: 6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+        scrollTrigger: { trigger: containerRef.current, start: "top 78%" },
       });
     },
     { scope: containerRef }
   );
 
   return (
-    <section ref={containerRef} id="contact" className="py-32 px-6 relative overflow-hidden">
+    <section ref={containerRef} id="contact" className="relative overflow-hidden px-5 py-32 md:px-8">
       <div
-        className="cta-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.1] pointer-events-none"
-        style={{ background: "radial-gradient(circle, #7c3cff 0%, transparent 60%)" }}
+        className="absolute inset-0 cinematic-image opacity-44"
+        style={{ backgroundImage: "url('/images/cta-studio.png')" }}
       />
+      <div className="absolute inset-0 bg-[#0d1011]/78" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0d1011] to-transparent" />
 
-      <div className="cta-inner relative z-10 max-w-3xl mx-auto text-center">
-        <span className="section-label justify-center">Let&apos;s Work Together</span>
-        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] mb-6 tracking-tight">
-          Ready to make{" "}
-          <br />
-          <span className="gradient-text">content that hits?</span>
-        </h2>
-        <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto">
-          Book a free 20-minute strategy call. We&apos;ll audit your current
-          content, understand your goals, and tell you exactly how we can help.
-        </p>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="max-w-4xl">
+          <span className="cta-reveal section-label">Let&apos;s work together</span>
+          <h2 className="cta-reveal font-display text-5xl font-black leading-none tracking-tight text-[#f7f3e8] md:text-7xl">
+            Bring us the brief. We&apos;ll bring the content engine.
+          </h2>
+          <p className="cta-reveal mt-6 max-w-2xl text-base leading-8 text-white/56">
+            Book a free 20-minute strategy call. We&apos;ll audit what you have,
+            find the strongest content angles, and show where production can move faster.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <MagneticButton
-            href="mailto:info@linchpinsoftsolution.com"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#7c3cff] hover:bg-[#9d6fff] text-white font-bold text-base transition-all duration-200 btn-glow cursor-pointer"
-          >
-            Book a Free Call
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </MagneticButton>
-          <a
-            href="mailto:info@linchpinsoftsolution.com"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl border border-[#404e7c]/50 hover:border-[#7c3cff]/40 text-white/60 hover:text-white font-semibold text-base transition-all duration-200"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M2 5l6 4 6-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-            info@linchpinsoftsolution.com
-          </a>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-6 text-white/20 text-xs font-medium">
-          {["No commitment required", "Response within 2 hours", "Free content audit included"].map((t) => (
-            <span key={t} className="flex items-center gap-1.5">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="#c084fc">
-                <path d="M6 1L7.3 4.3H11L8.2 6.3l1 3.3L6 7.6 2.8 9.6l1-3.3L1 4.3h3.7L6 1z" />
+          <div className="cta-reveal mt-9 flex flex-col gap-3 sm:flex-row">
+            <MagneticButton
+              href="mailto:info@linchpinsoftsolution.com"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#3dd6c4] px-7 py-4 text-sm font-black text-[#071011] transition duration-200 hover:bg-[#7fe7db] active:translate-y-[1px] btn-glow"
+            >
+              Book a free call
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              {t}
-            </span>
-          ))}
+            </MagneticButton>
+            <a
+              href="mailto:info@linchpinsoftsolution.com"
+              className="inline-flex items-center justify-center rounded-xl border border-white/14 bg-white/[0.035] px-7 py-4 text-sm font-bold text-white/70 transition duration-200 hover:border-[#3dd6c4]/34 hover:text-white active:translate-y-[1px]"
+            >
+              info@linchpinsoftsolution.com
+            </a>
+          </div>
         </div>
       </div>
     </section>

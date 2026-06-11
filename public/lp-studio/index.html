@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linchpin Studio — Influencer reels that grow your brand</title>
+<link rel="stylesheet" href="/lp-studio/css/tokens.css">
+<link rel="stylesheet" href="/lp-studio/css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#hero" aria-label="Linchpin Studio home"><img class="nav-logo" src="/lp-studio/assets/linchpin-studio-wordmark.svg" alt="Linchpin Studio"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#showcase">Work</a>
+      <a href="#process">Process</a>
+      <a href="#tracks">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
+      <a href="https://app.linchpinstudios.in" class="nav-cta-m">Go to Dashboard</a>
+      <a href="#contact" class="nav-cta-m">Start a project</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.linchpinstudios.in" class="btn btn-ghost nav-cta-d" style="padding:12px 22px;">Go to Dashboard</a>
+      <a href="#contact" class="btn btn-primary nav-cta-d" style="padding:12px 22px;">Start a project</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="ico" data-lucide="menu"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ S01 — HERO ═══════════════ -->
+<header class="hero section" id="hero" data-screen-label="Hero">
+  <div class="orb orb--violet"></div>
+  <div class="orb orb--lav"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="t-eyebrow" data-reveal>Linchpin Studio presents</span>
+      <h1 data-reveal>
+        <span class="line"><span>High-quality influencer reels</span></span>
+        <span class="line"><span>built to grow your brand.</span></span>
+      </h1>
+      <p class="hero-sub" data-reveal>We shoot, script, edit, and strategize premium influencer-led content for every social platform — built to grow your brand online, drive sales, and capture qualified leads.</p>
+      <div class="hero-cta" data-reveal>
+        <a href="#contact" class="btn btn-primary btn-lg">Get started today <i class="ico" data-lucide="arrow-right"></i></a>
+        <a href="#pricing" class="btn btn-ghost btn-lg">View our packages</a>
+      </div>
+    </div>
+    <div class="hero-chips" data-reveal>
+      <div class="chip">
+        <div class="chip-num">3+ pricing tiers</div>
+        <div class="chip-label">Silver, Gold &amp; Platinum</div>
+      </div>
+      <div class="chip">
+        <div class="chip-num">4 package sizes</div>
+        <div class="chip-label">3, 5, 10 &amp; custom</div>
+      </div>
+      <div class="chip">
+        <div class="chip-num">100% full service</div>
+        <div class="chip-label">Script · Shoot · Edit · Strategy</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind"><div class="line"></div><span>Scroll</span></div>
+</header>
+
+<!-- ═══════════════ S02 — TRUST STATS ═══════════════ -->
+<section class="stats-bar section--alt" aria-label="By the numbers">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num"><span class="t-grad" data-count="100" data-suffix="+">0</span></div><div class="stat-label">Reels delivered</div></div>
+      <div class="stat"><div class="stat-num"><span class="t-grad" data-count="50" data-suffix="+">0</span></div><div class="stat-label">Brands served</div></div>
+      <div class="stat"><div class="stat-num"><span class="t-grad" data-count="20" data-suffix="+">0</span></div><div class="stat-label">Influencers</div></div>
+      <div class="stat"><div class="stat-num"><span class="t-grad" data-count="4">0</span></div><div class="stat-label">Package tiers</div></div>
+      <div class="stat"><div class="stat-num"><span class="t-grad">2026</span></div><div class="stat-label">Reel brochure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S03 — REELS SHOWCASE ═══════════════ -->
+<section class="section" id="showcase" data-screen-label="Showcase">
+  <div class="container wide">
+    <div class="section-head" data-reveal>
+      <span class="t-eyebrow">Our work</span>
+      <h2 class="section-title">Reels that convert.</h2>
+      <p class="section-sub">A neatly curated wall of influencer-led and brand-led reels. Drop your own stills into any frame to preview the layout with real work.</p>
+    </div>
+
+    <div class="filter-row" data-reveal id="filterRow">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="influencer">With influencer</button>
+      <button class="filter-pill" data-filter="brand">Brand-led</button>
+      <button class="filter-pill" data-filter="silver">Silver</button>
+      <button class="filter-pill" data-filter="gold">Gold</button>
+      <button class="filter-pill" data-filter="platinum">Platinum</button>
+    </div>
+
+    <div class="reels-grid" id="reelsGrid">
+      <!-- cards injected by JS for clean repetition -->
+    </div>
+
+    <div class="showcase-cta" data-reveal>
+      <p>Want reels like these for your brand?</p>
+      <a href="#contact" class="btn btn-primary btn-lg">Get your custom quote <i class="ico" data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S04 — PROCESS ═══════════════ -->
+<section class="section section--alt" id="process" data-screen-label="Process">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">How it works</span>
+      <h2 class="section-title">From brief to viral — our process.</h2>
+    </div>
+    <div class="timeline" data-reveal id="timeline">
+      <div class="timeline-track">
+        <svg class="timeline-svg" preserveAspectRatio="none" viewBox="0 0 1000 6">
+          <defs>
+            <filter id="tlglow" x="-20%" y="-400%" width="140%" height="900%">
+              <feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur>
+              <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+          </defs>
+          <line x1="0" y1="3" x2="1000" y2="3" stroke="rgba(255,255,255,0.08)" stroke-width="2"></line>
+          <line id="tlLine" x1="0" y1="3" x2="1000" y2="3" stroke="#7c3cff" stroke-width="3" filter="url(#tlglow)" stroke-linecap="round"></line>
+        </svg>
+        <div class="timeline-nodes">
+          <div class="tl-node"><div class="tl-dot"><i class="ico" data-lucide="search"></i></div><div class="tl-step">01</div><div class="tl-title">Brief &amp; discovery</div><div class="tl-desc">Understanding your brand, goals, and audience.</div></div>
+          <div class="tl-node"><div class="tl-dot"><i class="ico" data-lucide="pen-line"></i></div><div class="tl-step">02</div><div class="tl-title">Script &amp; strategy</div><div class="tl-desc">Professional scripting with content-strategy depth.</div></div>
+          <div class="tl-node"><div class="tl-dot"><i class="ico" data-lucide="clapperboard"></i></div><div class="tl-step">03</div><div class="tl-title">Shoot day</div><div class="tl-desc">Influencer on-camera, single or multi-location.</div></div>
+          <div class="tl-node"><div class="tl-dot"><i class="ico" data-lucide="scissors"></i></div><div class="tl-step">04</div><div class="tl-title">Edit &amp; post</div><div class="tl-desc">Cinematic cuts, captions, music, and colour.</div></div>
+          <div class="tl-node"><div class="tl-dot"><i class="ico" data-lucide="send"></i></div><div class="tl-step">05</div><div class="tl-title">Deliver &amp; revise</div><div class="tl-desc">2 free revisions, 7–10 working day turnaround.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S05 — TWO TRACKS ═══════════════ -->
+<section class="section" id="tracks" data-screen-label="Two tracks">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">What we offer</span>
+      <h2 class="section-title">Two powerful content tracks.</h2>
+    </div>
+    <div class="tracks">
+      <article class="card hoverable track track--inf" data-reveal>
+        <div class="track-ico"><i class="ico" data-lucide="users"></i></div>
+        <h3>Reels featuring influencer talent</h3>
+        <p class="track-sub">Premium on-camera faces, full production, scripted &amp; strategized.</p>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>Standard / Premium / Top-tier influencer options</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Professional scripting</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Multi-angle shoots</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Full content strategy</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>3 / 5 / 10 reel packages</li>
+        </ul>
+        <div class="track-price">₹2,000 – ₹3,000 <small>/ reel</small></div>
+      </article>
+      <article class="card hoverable track track--solo" data-reveal>
+        <div class="track-ico"><i class="ico" data-lucide="megaphone"></i></div>
+        <h3>Solo / brand-led reels</h3>
+        <p class="track-sub">Founder-fronted, product-focused — no third-party talent.</p>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>Standard / Premium production options</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Core to in-depth scripting</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Single or multi-location shoots</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Brand-aligned content strategy</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>3 / 5 / 10 reel packages</li>
+        </ul>
+        <div class="track-price">₹1,500 – ₹2,000 <small>/ reel</small></div>
+      </article>
+    </div>
+    <div class="callout" data-reveal>
+      <i class="ico" data-lucide="shuffle"></i>
+      <p><strong>Want more flexibility?</strong> Track 1 and Track 2 can be mixed inside a custom bulk package. Speak to our project coordinator about hybrid campaign builds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S06 / S07 — PRICING ═══════════════ -->
+<section class="section section--alt" id="pricing" data-screen-label="Pricing">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">Reel pricing</span>
+      <h2 class="section-title">Choose your tier.</h2>
+    </div>
+    <div class="toggle-wrap" data-reveal>
+      <div class="toggle" id="priceToggle">
+        <button class="active" data-track="t1">With influencer</button>
+        <button data-track="t2">Brand-led (solo)</button>
+      </div>
+    </div>
+    <p class="tier-note" data-reveal>Each tier is built on influencer profile &amp; reach, edit complexity, scripting depth, shoot production value, and content-strategy support.</p>
+
+    <!-- TRACK 1 -->
+    <div class="track-panel active" id="panel-t1">
+      <div class="pricing-grid cols-3">
+        <article class="card ptier silver" data-reveal>
+          <div class="ptier-name">Silver</div>
+          <div class="ptier-tagline">Entry-level influencer reels</div>
+          <div class="ptier-price"><span class="amt">₹2,000</span><span class="per">/ reel</span></div>
+          <p class="ptier-desc">Standard influencer · core edits · basic scripting · single-location shoot.</p>
+          <div class="ptier-rows">
+            <div class="ptier-row"><span class="qty">3 Reels</span><span class="val">₹6,000</span></div>
+            <div class="ptier-row"><span class="qty">5 Reels</span><span class="val">₹10,000</span></div>
+            <div class="ptier-row"><span class="qty">10 Reels</span><span class="val">₹20,000</span></div>
+            <div class="ptier-row bulk"><span class="qty">Custom bulk</span><a href="#contact" class="val">Let's talk</a></div>
+          </div>
+          <a href="#contact" class="btn btn-tier-ghost btn-block">Choose Silver</a>
+        </article>
+
+        <article class="card ptier gold featured" data-badge="Most popular" data-reveal>
+          <div class="ptier-name">Gold</div>
+          <div class="ptier-tagline">Our signature tier</div>
+          <div class="ptier-price"><span class="amt">₹2,500</span><span class="per">/ reel</span></div>
+          <p class="ptier-desc">Premium influencer · advanced edits · professional scripting · multi-angle shoot · strategy support.</p>
+          <div class="ptier-rows">
+            <div class="ptier-row"><span class="qty">3 Reels</span><span class="val">₹7,500</span></div>
+            <div class="ptier-row"><span class="qty">5 Reels</span><span class="val">₹12,500</span></div>
+            <div class="ptier-row"><span class="qty">10 Reels</span><span class="val">₹25,000</span></div>
+            <div class="ptier-row bulk"><span class="qty">Custom bulk</span><a href="#contact" class="val">Let's talk</a></div>
+          </div>
+          <a href="#contact" class="btn btn-tier btn-block">Choose Gold</a>
+        </article>
+
+        <article class="card ptier platinum" data-reveal>
+          <div class="ptier-name">Platinum</div>
+          <div class="ptier-tagline">Cinematic, top-tier creator</div>
+          <div class="ptier-price"><span class="amt">₹3,000</span><span class="per">/ reel</span></div>
+          <p class="ptier-desc">Top-tier influencer · cinematic edits · in-depth scripting · multi-day shoot · full content strategy.</p>
+          <div class="ptier-rows">
+            <div class="ptier-row"><span class="qty">3 Reels</span><span class="val">₹9,000</span></div>
+            <div class="ptier-row"><span class="qty">5 Reels</span><span class="val">₹15,000</span></div>
+            <div class="ptier-row"><span class="qty">10 Reels</span><span class="val">₹30,000</span></div>
+            <div class="ptier-row bulk"><span class="qty">Custom bulk</span><a href="#contact" class="val">Let's talk</a></div>
+          </div>
+          <a href="#contact" class="btn btn-tier-ghost btn-block">Choose Platinum</a>
+        </article>
+      </div>
+    </div>
+
+    <!-- TRACK 2 -->
+    <div class="track-panel" id="panel-t2">
+      <div class="pricing-grid cols-2">
+        <article class="card ptier gold" data-reveal>
+          <div class="ptier-name">Gold</div>
+          <div class="ptier-tagline">Brand-led signature reels</div>
+          <div class="ptier-price"><span class="amt">₹1,500</span><span class="per">/ reel</span></div>
+          <p class="ptier-desc">Standard edits · core scripting · single-day shoot · brand-aligned content strategy.</p>
+          <div class="ptier-rows">
+            <div class="ptier-row"><span class="qty">3 Reels</span><span class="val">₹4,500</span></div>
+            <div class="ptier-row"><span class="qty">5 Reels</span><span class="val">₹7,500</span></div>
+            <div class="ptier-row"><span class="qty">10 Reels</span><span class="val">₹15,000</span></div>
+            <div class="ptier-row bulk"><span class="qty">Custom</span><a href="#contact" class="val">Let's talk</a></div>
+          </div>
+          <a href="#contact" class="btn btn-tier btn-block">Choose Gold</a>
+        </article>
+
+        <article class="card ptier diamond featured" data-badge="Premium" data-reveal>
+          <div class="ptier-name">Diamond</div>
+          <div class="ptier-tagline">Cinematic brand storytelling</div>
+          <div class="ptier-price"><span class="amt">₹2,000</span><span class="per">/ reel</span></div>
+          <p class="ptier-desc">Cinematic edits · in-depth scripting · multi-angle / multi-location · complete content strategy.</p>
+          <div class="ptier-rows">
+            <div class="ptier-row"><span class="qty">3 Reels</span><span class="val">₹6,000</span></div>
+            <div class="ptier-row"><span class="qty">5 Reels</span><span class="val">₹10,000</span></div>
+            <div class="ptier-row"><span class="qty">10 Reels</span><span class="val">₹20,000</span></div>
+            <div class="ptier-row bulk"><span class="qty">Custom</span><a href="#contact" class="val">Let's talk</a></div>
+          </div>
+          <a href="#contact" class="btn btn-tier-ghost btn-block">Choose Diamond</a>
+        </article>
+      </div>
+
+      <div class="addons">
+        <article class="card hoverable addon" data-reveal>
+          <div class="ico-box"><i class="ico" data-lucide="user-plus"></i></div>
+          <div>
+            <h4>Extra influencer add-on</h4>
+            <p>Add another on-camera face to any package.</p>
+            <span class="price">₹2,500 – ₹6,000 / influencer</span>
+          </div>
+        </article>
+        <article class="card hoverable addon" data-reveal>
+          <div class="ico-box"><i class="ico" data-lucide="film"></i></div>
+          <div>
+            <h4>Raw footage access</h4>
+            <p>All unedited footage, delivered after full payment.</p>
+            <span class="price">+40% on total bill</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S08 — DIGITAL MARKETING ═══════════════ -->
+<section class="section" id="packages" data-screen-label="Digital marketing packages">
+  <div class="container wide">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">Digital marketing</span>
+      <h2 class="section-title">Full-stack brand growth packages.</h2>
+    </div>
+    <div class="pkg-grid">
+      <article class="card hoverable pkg" data-reveal>
+        <div class="pkg-name">Seed</div>
+        <div class="pkg-tag">Early-stage brand building</div>
+        <div class="pkg-price"><span class="mrp">₹35,000</span><span class="now">₹30,000</span><span class="mo">/mo</span></div>
+        <ul class="pkg-feats">
+          <li class="check"><i class="ico" data-lucide="check"></i>7 Reels (3 influencer, 4 solo)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Static posts + captions</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Carousels (3–5 slides)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>10 Stories / month</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Influencer of your choice</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Shoot day included</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Meta ads campaign</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Monthly content calendar</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block">Start with Seed</a>
+      </article>
+
+      <article class="card pkg featured" data-reveal>
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-tag">Scaling your content engine</div>
+        <div class="pkg-price"><span class="mrp">₹75,000</span><span class="now">₹60,000</span><span class="mo">/mo</span></div>
+        <ul class="pkg-feats">
+          <li class="check"><i class="ico" data-lucide="check"></i>12 Reels (6 influencer, 6 solo)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>10 Static posts + hashtag sets</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Carousels (5–7 slides)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>20 Stories / month</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>3 Influencers of your choice</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Shoot days (5 hrs each)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Brand guidelines</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Meta ad campaigns</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block">Start with Growth</a>
+      </article>
+
+      <article class="card hoverable pkg" data-reveal>
+        <div class="pkg-name">Scale</div>
+        <div class="pkg-tag">Performance-led content marketing</div>
+        <div class="pkg-price"><span class="mrp">₹1,10,000</span><span class="now">₹1,00,000</span><span class="mo">/mo</span></div>
+        <ul class="pkg-feats">
+          <li class="check"><i class="ico" data-lucide="check"></i>20 Reels (all with influencers)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Static posts + hashtag sets</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Carousels (up to 10 slides)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Stories on request</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>5 Influencers</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>8 Shoot days included</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>10 Meta ad campaigns</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Full analytics dashboard</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block">Start with Scale</a>
+      </article>
+
+      <article class="card hoverable pkg" data-reveal>
+        <div class="pkg-name">Elite</div>
+        <div class="pkg-tag">Full-stack creative &amp; performance</div>
+        <div class="pkg-price"><span class="mrp">₹1,65,000</span><span class="now">₹1,40,000</span><span class="mo">/mo</span></div>
+        <ul class="pkg-feats">
+          <li class="check"><i class="ico" data-lucide="check"></i>30 Reels (all with influencers)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>15 Static posts + hashtag sets</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>10 Carousels (multi-slide)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>60 Stories / month</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>10 Influencers</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>12 Shoot days</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>20 Meta ad campaigns</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Dedicated creative director</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block">Start with Elite</a>
+      </article>
+    </div>
+
+    <div class="offer-strip" data-reveal>
+      <i class="ico" data-lucide="sparkles"></i>
+      <span>Limited-time launch offer · save up to ₹25,000</span>
+      <span class="sep">·</span>
+      <span>15% off on annual billing</span>
+      <span class="sep">·</span>
+      <span>Reel Hub add-on available</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S09 — DELIVERABLES ═══════════════ -->
+<section class="section section--alt" id="deliverables" data-screen-label="Deliverables">
+  <div class="container wide">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">What's included</span>
+      <h2 class="section-title">Everything that's included.</h2>
+      <p class="section-sub">Every package — regardless of tier — comes with the deliverables below.</p>
+    </div>
+    <div class="deliv-grid">
+      <article class="card hoverable deliv" data-reveal>
+        <div class="deliv-head"><span class="deliv-num">3</span><span class="deliv-unit">reels package</span></div>
+        <h4>Lean launch</h4>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Influencer included</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Shoot day</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Revisions per reel</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Full editing &amp; post-production</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Minimum package for premium influencers</li>
+        </ul>
+      </article>
+      <article class="card hoverable deliv" data-reveal>
+        <div class="deliv-head"><span class="deliv-num">5</span><span class="deliv-unit">reels package</span></div>
+        <h4>Steady cadence</h4>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>1 Influencer included</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>1–2 Shoot days (max)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Revisions per reel</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Full editing &amp; post-production</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Professional scripting</li>
+        </ul>
+      </article>
+      <article class="card hoverable deliv" data-reveal>
+        <div class="deliv-head"><span class="deliv-num">10</span><span class="deliv-unit">reels package</span></div>
+        <h4>Content engine</h4>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Influencers included</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Up to 3 shoot days (max)</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Revisions per reel</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Full editing &amp; post-production</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Professional scripting</li>
+        </ul>
+      </article>
+      <article class="card hoverable deliv" data-reveal>
+        <div class="deliv-head"><span class="deliv-num">∞</span><span class="deliv-unit">custom bulk</span></div>
+        <h4>Built to scale</h4>
+        <ul>
+          <li class="check"><i class="ico" data-lucide="check"></i>Custom influencer allocation</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Flexible shoot schedule</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>2 Revisions per reel</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Bulk pricing discussion</li>
+          <li class="check"><i class="ico" data-lucide="check"></i>Dedicated project manager</li>
+        </ul>
+      </article>
+    </div>
+    <p class="deliv-note" data-reveal><strong>Upgrading to Gold or Platinum tier</strong> unlocks advanced scripting, cinematic edits, multi-angle shoots, and full content-strategy support — at the per-reel rate listed for that tier.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ S10 — POLICIES ═══════════════ -->
+<section class="section" id="policies" data-screen-label="Policies">
+  <div class="container wide">
+    <div class="section-head center" data-reveal>
+      <span class="t-eyebrow">Policies</span>
+      <h2 class="section-title">Clear rules. No surprises.</h2>
+      <p class="section-sub">The fine print — clear, upfront, and built to protect both sides.</p>
+    </div>
+    <div class="policy-grid">
+      <article class="card hoverable policy" data-reveal><div class="policy-num">01</div><h4>Minimum reel order</h4><p>Minimum 3 reels — no singles. Base ₹1,500/reel (Solo, Gold).</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">02</div><h4>Influencer allocation</h4><p>≤5 reels: 1 influencer. 10 reels: 2. Extra: ₹2,500–₹6,000.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">03</div><h4>Premium influencers</h4><p>Minimum 3-reel commitment. Affects per-reel pricing.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">04</div><h4>Revision policy</h4><p>2 free revisions per reel. Extra revisions charged.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">05</div><h4>Shoot day limits</h4><p>5-reel: max 1–2 days. 10-reel: max 3 days. Extra = fees.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">06</div><h4>Raw footage charges</h4><p>+40% of total bill. Delivered after full payment.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">07</div><h4>Influencer pricing variance</h4><p>₹2,500–₹6,000 per influencer based on profile &amp; reach.</p></article>
+      <article class="card hoverable policy" data-reveal><div class="policy-num">08</div><h4>Custom bulk</h4><p>10+ reels: case-by-case. Includes dedicated project manager.</p></article>
+    </div>
+
+    <div class="notes-strip" data-reveal>
+      <h4><i class="ico" data-lucide="info"></i>Important notes</h4>
+      <div class="notes-cols">
+        <div class="check"><i class="ico" data-lucide="check"></i>All prices exclusive of GST</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Payment: 50% advance, 50% on delivery</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Cancellations after shoot: full charges</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Content ownership after full payment</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Deliverables: 7–10 working days / batch</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Reschedule 48 hrs in advance</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Location &amp; props by client (unless agreed otherwise)</div>
+        <div class="check"><i class="ico" data-lucide="check"></i>Digital marketing billed monthly in advance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ S11 — CONTACT + FOOTER ═══════════════ -->
+<section class="section contact" id="contact" data-screen-label="Contact">
+  <div class="orb orb--violet"></div>
+  <div class="orb orb--lav"></div>
+  <div class="container contact-inner">
+    <span class="t-eyebrow" data-reveal style="justify-content:center;">Let's work together</span>
+    <h2 data-reveal>Ready to make your brand unforgettable?</h2>
+    <p class="contact-sub" data-reveal>Every great brand starts with a conversation. Let's discuss how Linchpin Studio can transform your digital presence.</p>
+    <div data-reveal><a href="#contact" class="btn btn-primary btn-lg">Get started today <i class="ico" data-lucide="arrow-right"></i></a></div>
+    <div class="contact-row" data-reveal>
+      <a href="tel:+917416393958" class="contact-item"><i class="ico" data-lucide="phone"></i>+91 7416 393 958</a>
+      <a href="mailto:info@linchpinsoftsolution.com" class="contact-item"><i class="ico" data-lucide="mail"></i>info@linchpinsoftsolution.com</a>
+      <span class="contact-item"><i class="ico" data-lucide="map-pin"></i>AltF Begumpet, Hyderabad</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/lp-studio/assets/linchpin-studio-wordmark.svg" alt="Linchpin Studio">
+        <p>Steadfast in all your ways</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#tracks">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 Linchpin Studio — by Linchpin Soft Solutions Pvt. Ltd. · All rights reserved · Steadfast in all your ways</div>
+  </div>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="/lp-studio/js/reels.js"></script>
+<script src="/lp-studio/js/main.js"></script>
+
+</body>
+</html>

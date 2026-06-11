@@ -1,0 +1,223 @@
+/* ──────────────────────────────────────────────────────────────
+   LINCHPIN STUDIO — Colors & Type
+   The single source of truth for foundational design tokens.
+   Brand: bold creative agency, cinematic, high-energy violet.
+   ────────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ── Locked Palette ─────────────────────────────────────────── */
+  --plum-black:      #260f26;   /* page background, deepest layer */
+  --indigo-deep:     #251f47;   /* card surfaces, section bgs     */
+  --indigo-slate:    #404e7c;   /* borders, dividers, subtle UI   */
+  --violet-electric: #7c3cff;   /* single brand accent            */
+  --lavender-soft:   #c084fc;   /* gradient end, stars, glows     */
+
+  /* ── Semantic surfaces ──────────────────────────────────────── */
+  --bg:              var(--plum-black);
+  --bg-alt:          #1c0a1c;          /* slightly deeper for stripes */
+  --surface:         var(--indigo-deep);
+  --surface-2:       #2d2754;          /* hover lift on cards       */
+  --surface-3:       #1a1638;          /* nested surface            */
+  --border:          var(--indigo-slate);
+  --border-soft:     rgba(64, 78, 124, 0.45);
+  --border-strong:   rgba(124, 60, 255, 0.55);
+
+  /* ── Text (white only with opacity steps) ───────────────────── */
+  --fg-1:            rgba(255, 255, 255, 1.00);   /* primary       */
+  --fg-2:            rgba(255, 255, 255, 0.70);   /* body          */
+  --fg-3:            rgba(255, 255, 255, 0.45);   /* muted / meta  */
+  --fg-4:            rgba(255, 255, 255, 0.25);   /* disabled      */
+
+  /* ── Brand accent / state ───────────────────────────────────── */
+  --accent:          var(--violet-electric);
+  --accent-hover:    #6a2be0;
+  --accent-press:    #5a23c0;
+  --accent-soft:     rgba(124, 60, 255, 0.14);
+  --accent-ring:     rgba(124, 60, 255, 0.40);
+
+  /* Gradient ----------------------------------------------------*/
+  --grad-brand:      linear-gradient(135deg, #7c3cff 0%, #c084fc 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(124, 60, 255, 0.20) 0%, rgba(192, 132, 252, 0.20) 100%);
+  --grad-text:       linear-gradient(135deg, #c084fc 0%, #7c3cff 60%, #c084fc 100%);
+
+  /* Shadows / glows -------------------------------------------- */
+  --glow-violet:     0 10px 40px -10px rgba(124, 60, 255, 0.55),
+                     0 4px 12px -2px rgba(124, 60, 255, 0.35);
+  --glow-violet-sm:  0 4px 18px -4px rgba(124, 60, 255, 0.50);
+  --shadow-card:     0 1px 0 rgba(255, 255, 255, 0.04) inset,
+                     0 18px 40px -22px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 1px 0 rgba(255, 255, 255, 0.06) inset,
+                       0 28px 60px -22px rgba(0, 0, 0, 0.7),
+                       0 0 0 1px rgba(124, 60, 255, 0.25);
+
+  /* Status (used sparingly — palette only) --------------------- */
+  --success:         #c084fc;       /* re-use lavender for ratings */
+  --warning:         #c084fc;
+  --danger:          #ff6b9d;       /* off-palette — use very sparingly */
+
+  /* ── Type stacks ────────────────────────────────────────────── */
+  --font-display:    "Sora", "SF Pro Display", system-ui, sans-serif;
+  --font-body:       "Manrope", "SF Pro Text", system-ui, sans-serif;
+  --font-mono:       "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* ── Type scale (display) ──────────────────────────────────── */
+  --fs-d1: clamp(56px, 6.4vw, 96px);   /* hero                   */
+  --fs-d2: clamp(40px, 4.4vw, 64px);   /* section                */
+  --fs-d3: clamp(32px, 3.2vw, 48px);
+  --fs-h1: 36px;
+  --fs-h2: 28px;
+  --fs-h3: 22px;
+  --fs-h4: 18px;
+  --fs-body: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 12px;
+  --fs-eyebrow: 11px;     /* uppercase section label */
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.18;
+  --lh-normal: 1.45;
+  --lh-loose:  1.65;
+
+  --tr-tight:  -0.025em;
+  --tr-tighter: -0.04em;
+  --tr-eyebrow: 0.18em;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  /* ── Spacing (4-px ramp) ────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ── Radii ──────────────────────────────────────────────────── */
+  --r-xs:   6px;
+  --r-sm:   10px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-2xl:  36px;
+  --r-pill: 999px;
+
+  /* ── Motion ─────────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;
+  --t-slow: 360ms;
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  --container: 1200px;
+  --container-wide: 1400px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Base reset + body
+   ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--violet-electric); color: #fff; }
+
+/* ─────────────────────────────────────────────────────────────
+   Semantic type — drop-in classes
+   ───────────────────────────────────────────────────────────── */
+.t-display-1, h1.display {
+  font-family: var(--font-display);
+  font-size: var(--fs-d1);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tighter);
+  color: var(--fg-1);
+}
+.t-display-2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-d2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+.t-display-3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-d3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+.t-h1 { font-family: var(--font-display); font-size: var(--fs-h1); font-weight: var(--fw-bold); line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+.t-h2 { font-family: var(--font-display); font-size: var(--fs-h2); font-weight: var(--fw-bold); line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+.t-h3 { font-family: var(--font-display); font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+.t-h4 { font-family: var(--font-display); font-size: var(--fs-h4); font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+
+.t-body  { font-family: var(--font-body); font-size: var(--fs-body); font-weight: var(--fw-regular); line-height: var(--lh-loose); color: var(--fg-2); }
+.t-body-sm { font-size: var(--fs-sm); line-height: var(--lh-loose); color: var(--fg-2); }
+.t-meta  { font-size: var(--fs-xs); color: var(--fg-3); letter-spacing: 0.02em; }
+
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  color: var(--violet-electric);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.t-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--violet-electric);
+  display: inline-block;
+}
+
+.t-mono { font-family: var(--font-mono); font-size: var(--fs-sm); letter-spacing: -0.01em; }
+
+.t-grad {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Reusable surface primitives (used in preview cards + UI kit)
+   ───────────────────────────────────────────────────────────── */
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+}
+.surface-flat { background: var(--surface); border-radius: var(--r-lg); }
+.surface-3 { background: var(--surface-3); border: 1px solid var(--border-soft); border-radius: var(--r-md); }

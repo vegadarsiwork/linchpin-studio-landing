@@ -20,6 +20,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# local agent/design artifacts
+.codex/
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -27,3 +31,5 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel

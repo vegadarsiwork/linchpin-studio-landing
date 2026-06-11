@@ -3,13 +3,12 @@
 import { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
+import LinchpinLogo from "@/components/ui/LinchpinLogo";
 
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
+  { label: "Services", href: "#services" },
   { label: "Packages", href: "#pricing" },
-  { label: "Why Us", href: "#usps" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQs", href: "#faqs" },
 ];
 
 export default function Navbar() {
@@ -40,16 +39,16 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl rounded-2xl border transition-all duration-300 ${
+      className={`fixed left-1/2 top-4 z-50 w-[calc(100vw_-_2rem)] max-w-5xl -translate-x-1/2 rounded-2xl border transition-all duration-300 ${
         scrolled
-          ? "bg-[#1a0a2e]/80 border-[#7c3cff]/20 shadow-2xl shadow-black/40 backdrop-blur-2xl"
-          : "bg-[#260f26]/50 border-white/[0.07] shadow-xl shadow-black/20 backdrop-blur-xl"
+          ? "bg-[#0d1011]/88 border-[#3dd6c4]/20 shadow-2xl shadow-[#050707]/40 backdrop-blur-2xl"
+          : "bg-[#0d1011]/64 border-white/[0.08] shadow-xl shadow-[#050707]/20 backdrop-blur-xl"
       }`}
     >
       <div className="px-5 h-[60px] flex items-center justify-between">
         <a href="#" className="nav-item flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-[#7c3cff] flex items-center justify-center text-white font-black text-sm">
-            L
+          <div className="w-8 h-8 rounded-lg bg-[#3dd6c4] flex items-center justify-center text-[#071011] shadow-lg shadow-[#050707]/25">
+            <LinchpinLogo className="w-5 h-5" />
           </div>
           <span className="font-bold text-white tracking-tight">Linchpin Studio</span>
         </a>
@@ -68,7 +67,7 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="nav-item hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#7c3cff] hover:bg-[#9d6fff] text-white text-sm font-bold transition-colors duration-200 btn-glow"
+          className="nav-item hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#3dd6c4] hover:bg-[#7fe7db] text-[#071011] text-sm font-black transition-colors duration-200 btn-glow"
         >
           Get a Quote
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -105,7 +104,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="mt-2 px-5 py-3 rounded-lg bg-[#7c3cff] text-white text-sm font-bold text-center"
+            className="mt-2 px-5 py-3 rounded-lg bg-[#3dd6c4] text-[#071011] text-sm font-black text-center"
             onClick={() => setOpen(false)}
           >
             Get a Quote

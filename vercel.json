@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/dashboard",
+      "destination": "https://app.linchpinstudios.in",
+      "permanent": false
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://app.linchpinstudios.in/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/login",
+      "destination": "https://app.linchpinstudios.in/login",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "destination": "https://app.linchpinstudios.in",
+      "permanent": false
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://app.linchpinstudios.in/:path*",
+      "permanent": false
+    }
+  ]
+}

@@ -7,150 +7,77 @@ import { gsap, ScrollTrigger } from "@/lib/gsap";
 gsap.registerPlugin(ScrollTrigger);
 
 const SERVICES = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="3" y="5" width="22" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M9 23h10M14 21v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M8 10l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14 16h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: "Web Engineering",
-    desc: "Full-stack applications built on Next.js, React, and modern backend stacks. Performance-first, SEO-optimized, and built to scale.",
-    tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="9" y="2" width="10" height="24" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="14" cy="22" r="1" fill="currentColor" />
-        <path d="M11 5h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: "Mobile Development",
-    desc: "Cross-platform mobile apps with React Native that feel native on both iOS and Android. Smooth, fast, and polished.",
-    tags: ["React Native", "Expo", "iOS", "Android"],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="4" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M14 4v3M14 21v3M4 14h3M21 14h3M6.93 6.93l2.12 2.12M18.95 18.95l2.12 2.12M6.93 21.07l2.12-2.12M18.95 9.05l2.12-2.12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: "AI & LLM Integration",
-    desc: "Ship AI-powered features fast — RAG pipelines, LLM-backed UIs, agentic workflows, and intelligent automations.",
-    tags: ["OpenAI", "Claude", "LangChain", "Vector DBs"],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4L4 9l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M4 14l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M4 19l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Product Design",
-    desc: "Design systems, UI/UX, and brand identity that converts. We bridge the gap between beautiful and functional.",
-    tags: ["Figma", "Design Systems", "UX Research", "Prototyping"],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M5 9h18M5 14h10M5 19h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="21" cy="17" r="5" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M19 17l1.5 1.5L23 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Quality Engineering",
-    desc: "End-to-end testing, CI/CD pipelines, and code reviews. Ship with confidence — every release, every time.",
-    tags: ["Jest", "Playwright", "GitHub Actions", "Docker"],
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4C8.48 4 4 8.48 4 14s4.48 10 10 10 10-4.48 10-10S19.52 4 14 4z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M4 14h20M14 4c-2.67 3.33-4 6.67-4 10s1.33 6.67 4 10M14 4c2.67 3.33 4 6.67 4 10s-1.33 6.67-4 10" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-    title: "Cloud & DevOps",
-    desc: "Infrastructure as code, serverless deployments, and scalable architecture on AWS, Vercel, and GCP.",
-    tags: ["AWS", "Vercel", "Terraform", "Kubernetes"],
-  },
+  ["Short-form systems", "Repeatable reel and short formats with sharp hooks, caption direction, and pacing built for retention."],
+  ["Brand films", "Founder stories, launch films, and campaign videos with a tighter cinematic finish."],
+  ["Paid creative", "Ad variants shaped around offers, angles, objections, and scroll-stopping openers."],
+  ["Motion graphics", "Kinetic type, callouts, UI overlays, title systems, and transition language."],
+  ["Strategy calendar", "Monthly ideas, content pillars, scripts, and delivery planning that keeps the queue clear."],
 ];
+
+const PROCESS = ["Brief", "Script", "Cut", "Review", "Ship"];
 
 export default function Services() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      gsap.from(".service-header", {
-        y: 50,
+      gsap.from(".service-reveal", {
+        y: 30,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".service-header",
-          start: "top 85%",
-        },
-      });
-
-      gsap.from(".service-card", {
-        y: 60,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".services-grid",
-          start: "top 80%",
-        },
+        stagger: 0.09,
+        scrollTrigger: { trigger: containerRef.current, start: "top 78%" },
       });
     },
     { scope: containerRef }
   );
 
   return (
-    <section ref={containerRef} id="services" className="py-32 px-6 relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="service-header text-center mb-16">
-          <p className="text-brand-400 text-sm font-semibold tracking-widest uppercase mb-4">
-            What we do
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-5">
-            Everything you need to{" "}
-            <span className="gradient-text">ship great software</span>
+    <section ref={containerRef} id="services" className="px-5 py-28 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="service-reveal mb-16 max-w-4xl">
+          <span className="section-label">What we do</span>
+          <h2 className="font-display text-4xl font-black leading-none tracking-tight text-[#f7f3e8] md:text-6xl">
+            Production, editing, and strategy arranged like one operating system.
           </h2>
-          <p className="text-white/50 text-lg max-w-xl mx-auto">
-            From idea to production, we handle the full lifecycle with a senior
-            team that cares about quality.
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/46">
+            From campaign idea to final export, we shape content that looks
+            sharp, feels on-brand, and has a real job to do.
           </p>
         </div>
 
-        <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SERVICES.map((s) => (
-            <div
-              key={s.title}
-              className="service-card group p-6 rounded-2xl border border-white/8 bg-white/3 card-glow cursor-default"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-600/20 border border-brand-500/20 flex items-center justify-center text-brand-400 mb-5 group-hover:bg-brand-600/30 group-hover:border-brand-500/40 transition-colors duration-300">
-                {s.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{s.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-5">{s.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {s.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-md bg-brand-950/50 border border-brand-800/40 text-brand-300 text-xs font-medium"
-                  >
-                    {tag}
+        <div className="grid gap-12 lg:grid-cols-[0.62fr_0.38fr]">
+          <div className="service-reveal divide-y divide-white/10 border-y border-white/10">
+            {SERVICES.map(([title, desc], index) => (
+              <article key={title} className="grid gap-5 py-8 md:grid-cols-[5rem_1fr]">
+                <span className="font-mono text-xs text-white/28">0{index + 1}</span>
+                <div>
+                  <h3 className="font-display text-3xl font-black text-[#f7f3e8]">{title}</h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/48">{desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="service-reveal rounded-[1.75rem] border border-white/10 bg-[#101617] p-6 lg:self-start">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#3dd6c4]">Production lane</p>
+            <div className="mt-8 space-y-5">
+              {PROCESS.map((step, index) => (
+                <div key={step} className="flex items-center gap-4">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/12 font-mono text-xs text-white/42">
+                    {index + 1}
                   </span>
-                ))}
-              </div>
+                  <span className="text-sm font-semibold text-white/68">{step}</span>
+                  {index < PROCESS.length - 1 && <span className="ml-auto h-px flex-1 bg-white/8" />}
+                </div>
+              ))}
             </div>
-          ))}
+            <p className="mt-8 text-sm leading-7 text-white/42">
+              Speed only works when the handoffs are controlled. Our process keeps
+              creative decisions, revision notes, and exports moving in order.
+            </p>
+          </aside>
         </div>
       </div>
     </section>

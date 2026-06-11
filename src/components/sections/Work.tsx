@@ -1,234 +1,140 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const REELS = [
+const WORK = [
   {
-    id: "1",
-    title: "boAt — Diwali Campaign",
-    category: "Brand Reel",
-    views: "1.2M views",
-    duration: "0:45",
-    accent: "#7c3cff",
-    bg: "linear-gradient(135deg, #1a0a2e 0%, #260f26 100%)",
+    title: "Glow Republic",
+    type: "Paid social launch",
+    metric: "+38.4% CTR",
+    outcome: "Offer-led ad cuts tested across three hooks and two creator angles.",
+    image: "/images/work-glow-republic.png",
   },
   {
-    id: "2",
-    title: "Nykaa — Skincare Launch",
-    category: "Product Showcase",
-    views: "890K views",
-    duration: "0:30",
-    accent: "#ec4899",
-    bg: "linear-gradient(135deg, #1a0a18 0%, #260f26 100%)",
+    title: "PureNest",
+    type: "Founder film",
+    metric: "2.1m reach",
+    outcome: "A founder narrative rebuilt into launch film, reel cuts, and sales page clips.",
+    image: "/images/work-purenest.png",
   },
   {
-    id: "3",
-    title: "Zepto — App Promo",
-    category: "Social Ad",
-    views: "2.1M views",
-    duration: "0:15",
-    accent: "#22c55e",
-    bg: "linear-gradient(135deg, #0a1a0e 0%, #260f26 100%)",
+    title: "UrbanFit",
+    type: "Reel system",
+    metric: "412k views",
+    outcome: "A repeatable short-form format with faster openers and a clearer workout payoff.",
+    image: "/images/work-urbanfit.png",
   },
   {
-    id: "4",
-    title: "CRED — Referral Campaign",
-    category: "Performance Ad",
-    views: "750K views",
-    duration: "1:00",
-    accent: "#c084fc",
-    bg: "linear-gradient(135deg, #1a0a2e 0%, #251f47 100%)",
-  },
-  {
-    id: "5",
-    title: "Mamaearth — Founder Story",
-    category: "Brand Film",
-    views: "480K views",
-    duration: "2:30",
-    accent: "#f59e0b",
-    bg: "linear-gradient(135deg, #1a1200 0%, #260f26 100%)",
-  },
-  {
-    id: "6",
-    title: "Urban Company — Testimonials",
-    category: "Social Proof",
-    views: "320K views",
-    duration: "1:00",
-    accent: "#06b6d4",
-    bg: "linear-gradient(135deg, #001a1a 0%, #260f26 100%)",
+    title: "Saffron Bites",
+    type: "Menu campaign",
+    metric: "31 videos",
+    outcome: "A month of menu-led edits built around texture, pace, and location-specific CTAs.",
+    image: "/images/work-saffron-bites.png",
   },
 ];
 
 export default function Work() {
-  const sectionRef  = useRef<HTMLDivElement>(null);
-  const trackRef    = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const activeCase = WORK[active];
 
   useGSAP(
     () => {
-      const track   = trackRef.current;
-      const section = sectionRef.current;
-      if (!track || !section) return;
-
-      const totalScroll = track.scrollWidth - window.innerWidth;
-
-      /* Store the tween so we can kill(true) on cleanup.
-         kill(true) removes the pin spacer that ScrollTrigger inserts into the
-         real DOM — without this React's reconciler throws removeChild errors. */
-      const hTween = gsap.to(track, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      gsap.from(".work-heading", {
+      gsap.from(".work-reveal", {
         y: 30,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: { trigger: section, start: "top 80%" },
+        stagger: 0.1,
+        scrollTrigger: { trigger: containerRef.current, start: "top 78%" },
       });
 
-      gsap.utils.toArray<HTMLElement>(".reel-card").forEach((card, i) => {
-        gsap.from(card, {
-          opacity: 0,
-          scale: 0.92,
-          y: 30,
-          duration: 0.7,
-          ease: "power3.out",
-          delay: i * 0.06,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 60%",
-            toggleActions: "play none none none",
-          },
+      gsap.utils.toArray<HTMLElement>(".work-case").forEach((caseEl, index) => {
+        ScrollTrigger.create({
+          trigger: caseEl,
+          start: "top 50%",
+          end: "bottom 50%",
+          onEnter: () => setActive(index),
+          onEnterBack: () => setActive(index),
         });
       });
-
-      return () => {
-        hTween.scrollTrigger?.kill(true);
-      };
     },
     { scope: containerRef }
   );
 
   return (
-    <div ref={containerRef}>
-      {/*
-        sectionRef is the ScrollTrigger pin target.
-        flex-col: header at top, cards fill remaining height.
-        overflow-hidden clips the horizontal track overhang.
-      */}
-      <div
-        ref={sectionRef}
-        id="work"
-        className="bg-[#251f47]/20"
-        style={{
-          height: "100vh",
-          overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {/* Header — visible at the top of the pinned viewport */}
-        <div className="work-heading flex-shrink-0 px-6 pt-16 pb-6">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <span className="section-label">Our Work</span>
-              <h2 className="font-display text-4xl md:text-5xl font-black leading-tight">
-                Content that{" "}
-                <span className="gradient-text">actually performs</span>
-              </h2>
-            </div>
-            <a
-              href="#contact"
-              className="flex-shrink-0 inline-flex items-center gap-2 text-sm text-white/40 hover:text-[#c084fc] transition-colors duration-200 font-semibold"
-            >
-              Want results like these?
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
+    <section ref={containerRef} id="work" className="bg-[#101617] px-5 py-28 md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.38fr_0.62fr]">
+        <aside className="work-reveal lg:sticky lg:top-28 lg:h-fit">
+          <span className="section-label">Recent work</span>
+          <h2 className="font-display max-w-xl text-4xl font-black leading-none tracking-tight text-[#f7f3e8] md:text-6xl">
+            Case studies you can read at your pace.
+          </h2>
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/48">
+            Each campaign pairs a clear creative job with platform-ready edits,
+            reviewable assets, and measurable output.
+          </p>
+
+          <div className="mt-10 border-y border-white/10 py-6">
+            <span className="font-mono text-xs text-white/30">0{active + 1} / 04</span>
+            <h3 className="mt-4 font-display text-3xl font-black text-[#f7f3e8]">{activeCase.title}</h3>
+            <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-[#3dd6c4]">{activeCase.type}</p>
+            <p className="mt-4 text-sm leading-7 text-white/54">{activeCase.outcome}</p>
+            <p className="mt-6 font-mono text-sm text-[#f6c35b]">{activeCase.metric}</p>
           </div>
-        </div>
 
-        {/* Cards area — flex:1 fills remaining height, centres the track vertically */}
-        <div style={{ flex: 1, overflow: "hidden", display: "flex", alignItems: "center" }}>
-          <div
-            ref={trackRef}
-            className="flex gap-5 items-center pl-6 pr-20 w-max"
-          >
-            {REELS.map((reel) => (
-              <div
-                key={reel.id}
-                className="reel-card group relative flex-shrink-0 w-[340px] md:w-[380px] rounded-2xl overflow-hidden cursor-pointer"
-                style={{ background: reel.bg }}
+          <div className="mt-6 space-y-3">
+            {WORK.map((item, index) => (
+              <button
+                key={item.title}
+                onClick={() => {
+                  setActive(index);
+                  document.querySelectorAll(".work-case")[index]?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }}
+                className="group flex w-full items-center gap-3 text-left"
               >
-                {/* Thumbnail */}
-                <div className="relative w-full aspect-[9/14] flex items-center justify-center overflow-hidden">
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                    style={{ background: `radial-gradient(circle at center, ${reel.accent} 0%, transparent 70%)` }}
-                  />
-                  <div className="absolute inset-0 grid-bg opacity-20" />
-                  <div
-                    className="relative z-10 w-16 h-16 rounded-full border-2 bg-black/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                    style={{ borderColor: `${reel.accent}60` }}
-                  >
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="white" style={{ marginLeft: 3 }}>
-                      <path d="M5 3l15 8-15 8V3z" />
-                    </svg>
-                  </div>
-                  <div className="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-black/50 backdrop-blur-sm text-white/60 text-xs font-mono font-semibold">
-                    {reel.duration}
-                  </div>
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-[3px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                    style={{ background: reel.accent }}
-                  />
-                </div>
-
-                {/* Info */}
-                <div className="p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-widest mb-1.5" style={{ color: reel.accent }}>
-                    {reel.category}
-                  </p>
-                  <p className="text-white font-semibold text-base leading-snug mb-2">{reel.title}</p>
-                  <p className="text-white/35 text-xs font-medium">{reel.views}</p>
-                </div>
-              </div>
+                <span className={`h-px flex-1 transition-colors ${active === index ? "bg-[#3dd6c4]" : "bg-white/12 group-hover:bg-white/28"}`} />
+                <span className={`min-w-[104px] text-xs font-bold transition-colors ${active === index ? "text-[#3dd6c4]" : "text-white/34 group-hover:text-white/58"}`}>
+                  {item.title}
+                </span>
+              </button>
             ))}
-
-            {/* End CTA */}
-            <div className="flex-shrink-0 w-[240px] flex flex-col items-center justify-center gap-4 px-8 text-center">
-              <div className="w-14 h-14 rounded-full border border-[#7c3cff]/40 bg-[#7c3cff]/10 flex items-center justify-center">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <path d="M11 4v14M4 11h14" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-              </div>
-              <p className="text-white/60 text-sm leading-relaxed">Want to see your brand here?</p>
-              <a
-                href="#contact"
-                className="px-5 py-2.5 rounded-xl bg-[#7c3cff] hover:bg-[#9d6fff] text-white text-sm font-bold transition-colors duration-200 btn-glow"
-              >
-                Let&apos;s Talk
-              </a>
-            </div>
           </div>
+        </aside>
+
+        <div className="work-reveal space-y-12">
+          {WORK.map((item, index) => (
+            <article key={item.title} className="work-case grid gap-6 border-t border-white/10 pt-10 md:grid-cols-[0.42fr_0.58fr] md:items-end">
+              <div className="pb-2">
+                <span className="font-mono text-xs text-white/28">CASE 0{index + 1}</span>
+                <h3 className="mt-4 font-display text-3xl font-black leading-none text-[#f7f3e8] md:text-4xl">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-white/48">{item.outcome}</p>
+              </div>
+
+              <div className="relative mx-auto aspect-[9/14] w-full max-w-[430px] overflow-hidden rounded-[2rem] border border-white/12 bg-[#0d1011] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
+                <div className="h-full cinematic-image transition duration-700 hover:scale-[1.025]" style={{ backgroundImage: `url('${item.image}')` }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1011]/82 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/42">{item.type}</p>
+                    <p className="mt-2 font-display text-2xl font-black text-white">{item.title}</p>
+                  </div>
+                  <span className="font-mono text-sm text-[#3dd6c4]">{item.metric}</span>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
